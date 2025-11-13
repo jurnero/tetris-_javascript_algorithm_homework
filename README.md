@@ -47,12 +47,14 @@ These features help detect “Swiss cheese” boards and unstable stacking.
 
 I tuned the weights to strongly penalize holes and jagged surfaces while rewarding flatter boards:
 
+**Feature weights:**
+```
 Height:       -0.51
 Lines:         0.76
 Holes:        -0.36
 Bumpiness:    -0.18
 RowTransitions: added penalty
-
+```
 
 The agent became noticeably more consistent and avoided risky placements.
 
@@ -67,9 +69,9 @@ Generate all valid moves for the current piece
 
 Score the resulting boards
 
-Keep the best 5 (beam width)
+Keep the best 5 beam width
 
-For these 5 boards, simulate placements of the next piece
+For these 5 boards we need to simulate placements of the next piece
 
 Choose the move that leads to the best future outcome
 
